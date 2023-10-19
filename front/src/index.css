@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 3930855 */
+  src: url('//at.alicdn.com/t/c/font_3930855_yw5wawlmb9.woff2?t=1677979013874') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3930855_yw5wawlmb9.woff?t=1677979013874') format('woff'),
+       url('//at.alicdn.com/t/c/font_3930855_yw5wawlmb9.ttf?t=1677979013874') format('truetype');
+}
+
+.icon {
+  font-family:"iconfont" !important;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.i-left::before { content: "\e660"; }
+
+.i-right::before { content: "\e65f"; }
+.i-bottom::before { content: "\e6b9"; }
+.i-switch::before { content: "\e60d"; }
+
+.no-user-select {
+  -moz-user-select:none;/*火狐*/
+  -webkit-user-select:none;/*webkit浏览器*/
+  -ms-user-select:none;/*IE10*/
+  -khtml-user-select:none;/*早期浏览器*/
+    user-select:none;
+}
