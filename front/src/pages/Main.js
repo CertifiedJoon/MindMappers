@@ -44,14 +44,28 @@ function ChooseRoleToUpload() {
   const handleStudentUpload = async (e) => {
     e.preventDefault();
     const params = transform(Array.from(formRef.current.elements));
-    console.log(params);
 
     if (params.get("file") === null) {
       alert("Please  upload a file");
       return;
     }
-    // setFileType('student file');
-    // fetchAudio(params);
+    // setFileType('manual');
+    const formData = new FormData();
+    formData.append("files", params.get("file"));
+    const resp = await axios.post("/describe-images/", formData, {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+      responseType: "blob",
+    });
+    const url = window.URL.createObjectURL(resp.data);
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "audio.mp3");
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setAudioSource(url);
   };
 
   const [isPlaying, setPlaying] = useState(false);
@@ -127,7 +141,7 @@ function ChooseRoleToUpload() {
     <div className="submit-event">
       <div className="wrapper border p-5">
         <div className="border-bottom py-4 mb-5 d-flex text-center">
-          <p className="fs-2">Please choose your role first:</p>
+          <p className="fs-2">Please select type of document first:</p>
         </div>
 
         <Button
@@ -141,7 +155,7 @@ function ChooseRoleToUpload() {
           type="submit"
           onClick={roleTypeOfStu}
         >
-          Student
+          General Image / PDF
         </Button>
         <Button
           className="mx-3 mb-4 px-4"
@@ -154,7 +168,7 @@ function ChooseRoleToUpload() {
           type="submit"
           onClick={roleTypeOfStaff}
         >
-          Staff
+          Manuscript
         </Button>
         <br />
 
