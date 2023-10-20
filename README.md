@@ -1,3 +1,6 @@
+# Demo Video
+https://drive.google.com/file/d/12blv_C7bpQY1_Vd4mNM2DPOmN2HrBOWm/view?usp=sharing
+
 # Visual2Speech
 
 Visual2Speech is a web-based application that aims to assist visually impaired students in understanding diagrams. It utilizes artificial intelligence to generate text descriptions of diagrams, making it easier for visually impaired students to comprehend the subject matter. In addition, Visual2Speech also performs optical character recognition (OCR) on scanned pages to make the text content of the document accessible.
